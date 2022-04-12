@@ -1,13 +1,21 @@
 import React from "react";
 import Stock from "./Stock";
 
-function StockContainer() {
+function StockContainer({stocks, sendUpClick}) {
+  
+  const mainStockList = stocks.map((stock) => (
+    <Stock key={stock.id} stock={stock} sendUpClick={sendUpClick}/>
+
+
+  ))
+  
   return (
     <div>
       <h2>Stocks</h2>
-      {/* render stock list here*/}
+      {mainStockList}
     </div>
   );
 }
 
 export default StockContainer;
+ 
